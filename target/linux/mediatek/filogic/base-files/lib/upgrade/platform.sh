@@ -109,6 +109,7 @@ platform_do_upgrade() {
 	bananapi,bpi-r4-poe|\
 	bananapi,bpi-r4-lite|\
 	bazis,ax3000wm|\
+	bt,rb300|\
 	cetron,ct3003-ubootmod|\
 	cmcc,a10-ubootmod|\
 	cmcc,rax3000m|\
