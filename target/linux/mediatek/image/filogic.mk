@@ -824,6 +824,23 @@ define Device/buffalo_wsr-6000ax8
 endef
 TARGET_DEVICES += buffalo_wsr-6000ax8
 
+define Device/bt_rb300
+  DEVICE_VENDOR := BT
+  DEVICE_MODEL := BT-RB300
+  DEVICE_DTS := mt7981b-bt-rb300
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_PACKAGES :=
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 112640k
+  KERNEL_IN_UBI := 1  
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += bt_rb300
+
 define Device/cetron_ct3003
   DEVICE_VENDOR := Cetron
   DEVICE_MODEL := CT3003
